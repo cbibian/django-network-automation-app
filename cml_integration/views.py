@@ -1,3 +1,8 @@
-from django.shortcuts import render
+from rest_framework import viewsets
+from .models import CMLSettings
+from .serializers import CMLSettingsSerializer
 
-# Create your views here.
+class CMLSettingsViewSet(viewsets.ModelViewSet):
+    queryset = CMLSettings.objects.all()
+    serializer_class = CMLSettingsSerializer
+
