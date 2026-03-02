@@ -1,0 +1,20 @@
+ios_backup.yml
+---
+- name: Backup running configuration
+  hosts: all
+  gather_facts: no
+
+  tasks:
+    - name: Get running config
+      cisco.ios.ios_command:
+        commands:
+          - show running-config
+      register: output
+
+    - name: Save backup to local file
+      copy:
+        content: "{{ output.stdout[0] }}"
+        dest: "backups/{{ inventory_hostname }}_running_config.txt"
+
+
+

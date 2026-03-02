@@ -1,0 +1,22 @@
+ ios_ping.yml
+---
+- name: Ping test from router
+  hosts: all
+  gather_facts: no
+
+  vars:
+    target_ip: "8.8.8.8"
+
+  tasks:
+    - name: Ping target
+      cisco.ios.ios_command:
+        commands:
+          - ping {{ target_ip }}
+      register: output
+
+    - debug:
+        var: output.stdout[0]
+
+
+
+

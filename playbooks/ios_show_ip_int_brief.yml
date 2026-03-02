@@ -1,0 +1,14 @@
+---
+- name: Show IP interface brief
+  hosts: all
+  gather_facts: no
+
+  tasks:
+    - name: Get interface summary
+      cisco.ios.ios_command:
+        commands:
+          - show ip interface brief
+      register: output
+
+    - debug:
+        var: output.stdout[0]
