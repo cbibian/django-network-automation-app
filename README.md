@@ -1,3 +1,4 @@
+```
 • Django Network Automation Demo (Django + Ansible + Cisco IOSv)
   This project is a lightweight but production‑style network automation platform built with Django, Django REST Framework, and Ansible. It exposes a REST API for running playbooks against Cisco IOSv routers, dynamically generates inventories, executes automation jobs, and returns structured results.
   The goal is to demonstrate real NetDevOps patterns in a minimal, easy‑to‑run environment.
@@ -122,10 +123,10 @@ ok: [R1] => {
     }
 }
 
-```
+
 
 PLAY RECAP *********************************************************************
-R1                         : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+R1: ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
 
 
 📌 Future Enhancements
@@ -135,3 +136,4 @@ R1                         : ok=2    changed=0    unreachable=0    failed=0    s
 
 📜 License
 MIT
+```
